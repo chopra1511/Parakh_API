@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 1",
+    "SKU_ID": "#P-0001",
+    "price": 200,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "white",
+      "material": "silver"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 2,
+    "rating": {
+      "rate": 4.5,
+      "count": 365
+    }
+  },
+  {
+    "id": 2,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 2",
+    "SKU_ID": "#P-0002",
+    "price": 200,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "gold",
+      "material": "gold"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 3,
+    "rating": {
+      "rate": 4.8,
+      "count": 150
+    }
+  },
+  {
+    "id": 3,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 3",
+    "SKU_ID": "#P-0003",
+    "price": 150,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "blue",
+      "material": "platinum"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 1,
+    "rating": {
+      "rate": 4.2,
+      "count": 80
+    }
+  },
+  {
+    "id": 4,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 4",
+    "SKU_ID": "#P-0004",
+    "price": 300,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "white",
+      "material": "silver"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 5,
+    "rating": {
+      "rate": 4.7,
+      "count": 210
+    }
+  },
+  {
+    "id": 5,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 5",
+    "SKU_ID": "#P-0005",
+    "price": 250,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "pink",
+      "material": "rose gold"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 4,
+    "rating": {
+      "rate": 4.9,
+      "count": 500
+    }
+  },
+  {
+    "id": 6,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 6",
+    "SKU_ID": "#P-0006",
+    "price": 100,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "red",
+      "material": "silver"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 3,
+    "rating": {
+      "rate": 3.8,
+      "count": 120
+    }
+  },
+  {
+    "id": 7,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 7",
+    "SKU_ID": "#P-0007",
+    "price": 180,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "green",
+      "material": "gold"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 7,
+    "rating": {
+      "rate": 4.6,
+      "count": 75
+    }
+  },
+  {
+    "id": 8,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 8",
+    "SKU_ID": "#P-0008",
+    "price": 220,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "purple",
+      "material": "platinum"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 6,
+    "rating": {
+      "rate": 4.3,
+      "count": 240
+    }
+  },
+  {
+    "id": 9,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 9",
+    "SKU_ID": "#P-0009",
+    "price": 130,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "yellow",
+      "material": "silver"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 2,
+    "rating": {
+      "rate": 4.1,
+      "count": 95
+    }
+  },
+  {
+    "id": 10,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 10",
+    "SKU_ID": "#P-0010",
+    "price": 270,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "orange",
+      "material": "gold"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 8,
+    "rating": {
+      "rate": 4.5,
+      "count": 300
+    }
+  },
+  {
+    "id": 11,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 11",
+    "SKU_ID": "#P-0011",
+    "price": 190,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "white",
+      "material": "silver"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 3,
+    "rating": {
+      "rate": 4.4,
+      "count": 180
+    }
+  },
+  {
+    "id": 12,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 12",
+    "SKU_ID": "#P-0012",
+    "price": 210,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "white",
+      "material": "silver"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 5,
+    "rating": {
+      "rate": 4.7,
+      "count": 220
+    }
+  },
+  {
+    "id": 13,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 13",
+    "SKU_ID": "#P-0013",
+    "price": 140,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "white",
+      "material": "gold"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 1,
+    "rating": {
+      "rate": 3.9,
+      "count": 110
+    }
+  },
+  {
+    "id": 14,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 14",
+    "SKU_ID": "#P-0014",
+    "price": 160,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "white",
+      "material": "platinum"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 4,
+    "rating": {
+      "rate": 4.6,
+      "count": 210
+    }
+  },
+  {
+    "id": 15,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 15",
+    "SKU_ID": "#P-0015",
+    "price": 230,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "white",
+      "material": "silver"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 6,
+    "rating": {
+      "rate": 4.8,
+      "count": 350
+    }
+  },
+  {
+    "id": 16,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 16",
+    "SKU_ID": "#P-0016",
+    "price": 100,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "white",
+      "material": "gold"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 2,
+    "rating": {
+      "rate": 4.0,
+      "count": 90
+    }
+  },
+  {
+    "id": 17,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 17",
+    "SKU_ID": "#P-0017",
+    "price": 280,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "white",
+      "material": "platinum"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 8,
+    "rating": {
+      "rate": 4.9,
+      "count": 400
+    }
+  },
+  {
+    "id": 18,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 18",
+    "SKU_ID": "#P-0018",
+    "price": 150,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "white",
+      "material": "silver"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 7,
+    "rating": {
+      "rate": 4.1,
+      "count": 130
+    }
+  },
+  {
+    "id": 19,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 19",
+    "SKU_ID": "#P-0019",
+    "price": 220,
+    "discount": null,
+    "category": "Earrings",
+    "variant": {
+      "color": "white",
+      "material": "gold"
+    },
+    "mostLoved": true,
+    "wishlist": false,
+    "available": true,
+    "stock": 4,
+    "rating": {
+      "rate": 4.7,
+      "count": 260
+    }
+  },
+  {
+    "id": 20,
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "name": "Product 20",
+    "SKU_ID": "#P-0020",
+    "price": 170,
+    "discount": 400,
+    "category": "Rings",
+    "variant": {
+      "color": "white",
+      "material": "platinum"
+    },
+    "mostLoved": false,
+    "wishlist": false,
+    "available": true,
+    "stock": 3,
+    "rating": {
+      "rate": 4.2,
+      "count": 140
+    }
+  }
+]
