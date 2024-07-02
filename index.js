@@ -56,6 +56,8 @@ app.options("*", (req, res) => {
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
+app.set("trust proxy", true); 
+
 app.use(
   session({
     secret: process.env.JWT_SECRET || "my secret",
