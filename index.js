@@ -14,6 +14,7 @@ const paymentRoutes = require("./routes/payment");
 const PORT = process.env.PORT || 8000;
 
 const app = express();
+app.set("trust proxy", 1);
 
 const store = new MongoDBStore({
   uri: process.env.MONGODB_URI,
@@ -66,7 +67,7 @@ app.use(
     saveUninitialized: false,
     store: store,
     cookie: {
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       httpOnly: false,
       sameSite: "none",
     },
