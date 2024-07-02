@@ -27,8 +27,6 @@ store.on("error", function (error) {
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://parakh-frontend.netlify.app",
       "https://chopra1511.github.io/Parakh_client",
     ],
     credentials: true,
