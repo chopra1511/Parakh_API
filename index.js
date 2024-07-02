@@ -42,7 +42,8 @@ app.use(
     store: store,
     cookie: {
       secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      httpOnly: false,
+      sameSite: "none",
     },
   })
 );
