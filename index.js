@@ -14,7 +14,6 @@ const paymentRoutes = require("./routes/payment");
 const PORT = process.env.PORT || 8000;
 
 const app = express();
-app.set("trust proxy", 1);
 
 const store = new MongoDBStore({
   uri: process.env.MONGODB_URI,
@@ -27,10 +26,7 @@ store.on("error", function (error) {
 
 app.use(
   cors({
-    origin: [
-      "https://chopra1511.github.io",
-      "http://localhost:5173",
-    ],
+    origin: ["https://chopra1511.github.io", "http://localhost:5173"],
     credentials: true,
   })
 );
@@ -67,7 +63,7 @@ app.use(
     saveUninitialized: false,
     store: store,
     cookie: {
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       httpOnly: false,
       sameSite: "none",
     },
