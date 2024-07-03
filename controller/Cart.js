@@ -137,14 +137,23 @@ exports.decreaseItemCart = async (req, res) => {
         cart.cart.items.splice(existingItemIndex, 1);
       }
 
-      // Save the updated cart
-      await cart.save();
-      res.status(200).json(cart);
+      if (cart.cart.items.length === 0) {
+        // If the cart is empty, delete the cart and update the user
+        await Cart.findOneAndDelete({ userID: userID });
+        await User.findByIdAndUpdate(userID, { $unset: { cart: "" } });
+        return res
+          .status(200)
+          .json(cart);
+      } else {
+        // Save the updated cart
+        await cart.save();
+        return res.status(200).json(cart);
+      }
     } else {
-      res.status(404).json({ message: "Product not found in cart" });
+      return res.status(404).json({ message: "Product not found in cart" });
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -175,14 +184,21 @@ exports.deleteItemFromCart = async (req, res) => {
       // Remove the item from the cart
       cart.cart.items.splice(existingItemIndex, 1);
 
-      // Save the updated cart
-      await cart.save();
-      res.status(200).json(cart);
+      if (cart.cart.items.length === 0) {
+        // If the cart is empty, delete the cart and update the user
+        await Cart.findOneAndDelete({ userID: userID });
+        await User.findByIdAndUpdate(userID, { $unset: { cart: "" } });
+        return res.status(200).json(cart);
+      } else {
+        // Save the updated cart
+        await cart.save();
+        return res.status(200).json(cart);
+      }
     } else {
-      res.status(404).json({ message: "Product not found in cart" });
+      return res.status(404).json({ message: "Product not found in cart" });
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -190,20 +206,17 @@ exports.clearCart = async (req, res) => {
   const userID = req.session.user._id;
 
   try {
-    // Find the cart for the given user
-    const cart = await Cart.findOne({ userID: userID });
+    // Find and delete the cart for the given user
+    const cart = await Cart.findOneAndDelete({ userID: userID });
 
     if (!cart) {
       return res.status(404).json({ message: "Cart not found" });
     }
 
-    // Clear the items in the cart
-    cart.cart.items = [];
+    // Optionally, update the user's cart reference
+    await User.findByIdAndUpdate(userID, { $unset: { cart: "" } });
 
-    // Save the updated cart
-    await cart.save();
-
-    return res.status(200).json(cart);
+    return res.status(200).json({ message: "Cart cleared successfully" });
   } catch (error) {
     console.error(error);
     return res

@@ -58,8 +58,6 @@ exports.removeUserAddress = async (req, res) => {
       "addresses.addressList"
     );
 
-    
-
     if (!userAddress) {
       return res.status(404).json({ message: "Address not found" });
     }
@@ -69,21 +67,26 @@ exports.removeUserAddress = async (req, res) => {
       (address) => address._id.toString() === addressId
     );
 
-    console.log(existingAddressIndex);
-
     if (existingAddressIndex >= 0) {
       // Remove the address from the address list
       userAddress.addresses.addressList.splice(existingAddressIndex, 1);
 
-      // Save the updated address document
-      await userAddress.save();
-      res.status(200).json(userAddress);
+      if (userAddress.addresses.addressList.length === 0) {
+        // If the address list is empty, delete the address document and update the user
+        await Address.findOneAndDelete({ userID: userID });
+        await User.findByIdAndUpdate(userID, { $unset: { addresses: "" } });
+        return res.status(200).json(userAddress);
+      } else {
+        // Save the updated address document
+        await userAddress.save();
+        return res.status(200).json(userAddress);
+      }
     } else {
-      res.status(404).json({ message: "Address not found" });
+      return res.status(404).json({ message: "Address not found" });
     }
   } catch (error) {
     console.error("Error removing address:", error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 };
 

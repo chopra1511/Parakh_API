@@ -29,7 +29,7 @@ exports.cartCheckout = async (req, res) => {
        customer_email: "walter.white@example.com",
      },
      order_meta: {
-       payment_methods: "cc,dc,upi",
+       payment_methods: "upi",
      },
    };
 
