@@ -15,6 +15,19 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 
+// Create an HTTP server
+const server = require("http").createServer(app);
+
+// Set up Socket.IO
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "*",
+  },
+});
+
+// Make the io instance available in routes
+app.set("socketio", io);
+
 const store = new MongoDBStore({
   uri: process.env.MONGODB_URI,
   collection: "sessions",
@@ -26,7 +39,7 @@ store.on("error", function (error) {
 
 app.use(
   cors({
-    origin: ["https://chopra1511.github.io", "http://localhost:5173"],
+    origin: ["https://chopra1511.github.io", "http://localhost:5174"],
     credentials: true,
   })
 );
@@ -56,7 +69,7 @@ app.options("*", (req, res) => {
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
-app.set("trust proxy", true); 
+app.set("trust proxy", true);
 
 app.use(
   session({
@@ -65,9 +78,9 @@ app.use(
     saveUninitialized: false,
     store: store,
     cookie: {
-      secure: true,
-      httpOnly: false,
-      sameSite: "none",
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      sameSite: "lax",
     },
   })
 );
@@ -77,13 +90,23 @@ app.use(storeRoutes.routes);
 app.use(cartRoutes.routes);
 app.use(paymentRoutes.routes);
 
+// Connect to MongoDB and start the server
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
       console.log(`Connected! and running on port ${PORT}`);
     });
   })
   .catch((err) => {
     console.log(err);
   });
+
+// Socket.IO connection handling (optional)
+io.on("connection", (socket) => {
+  console.log("New client connected", socket.id);
+
+  socket.on("disconnect", () => {
+    console.log("Client disconnected", socket.id);
+  });
+});

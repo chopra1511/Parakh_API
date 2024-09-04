@@ -32,6 +32,7 @@ exports.userRegister = async (req, res) => {
       res.status(201).json({
         message: "User registered successfully",
         user: newUser,
+        isLoggedIn: req.session.isLoggedIn,
       });
     });
   } catch (error) {
@@ -55,6 +56,7 @@ exports.userLogIN = async (req, res) => {
       res.status(201).json({
         message: "User logged in successfully",
         user,
+        isLoggedIn : req.session.isLoggedIn
       });
     });
   } else {
@@ -79,6 +81,7 @@ exports.userLogout = async (req, res) => {
 
 exports.getUser = async (req, res) => {
   const userID = req.session.user._id;
+  const isLoggedIn = req.session.isLoggedIn;
   try {
     const user = await User.findById(userID);
     if (!user) {
@@ -87,6 +90,7 @@ exports.getUser = async (req, res) => {
       res.status(201).json({
         message: "User fetched successfully",
         user,
+        isLoggedIn
       });
   } catch (error) {
       console.error("Error fetching user:", error);
