@@ -90,8 +90,6 @@ exports.removeUserAddress = async (req, res) => {
   }
 };
 
-
-
 exports.getUserAddresses = async (req, res) => {
   const userID = req.session.user._id;
   // console.log(userID);
