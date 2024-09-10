@@ -78,8 +78,8 @@ app.use(
     saveUninitialized: false,
     store: store,
     cookie: {
-      // secure: process.env.NODE_ENV === "production",
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
+      // secure: true,
       httpOnly: true,
       sameSite: "None",
     },
